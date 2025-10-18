@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/tipos_de_violencia.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <!-- HEADER -->
@@ -23,9 +22,7 @@
     <div class="main-title">TIPOS DE VIOLENCIA</div>
 
     <!-- CUADRÍCULA DE VIOLENCIAS -->
-    <div class="grid" id="grid-tipos-violencia">
-        <!-- Elementos dinámicos se cargarán aquí desde la API -->
-    </div>
+    <div class="grid" id="grid-tipos-violencia"></div>
 
     <!-- PIE DE PÁGINA -->
     <div id="footer-container"></div>
@@ -33,31 +30,29 @@
     <!-- SCRIPTS -->
     <script>
         // Cargar header dinámico
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            });
+        fetch('../html/header.html')
+            .then(r => r.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
 
         // Cargar footer dinámico
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
+        fetch('../html/footer.html')
+            .then(r => r.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
 
         // Cargar tipos de violencia desde la API
-        fetch('https://tu-api.com/tipos-violencia') // reemplaza con la URL real de tu API
-            .then(response => response.json())
+        fetch('http://localhost:4000/api/tipos-violencia')
+            .then(r => r.json())
             .then(data => {
                 const grid = document.getElementById('grid-tipos-violencia');
+                grid.innerHTML = '';
 
                 data.forEach(item => {
                     const divItem = document.createElement('div');
                     divItem.classList.add('item');
 
                     const img = document.createElement('img');
-                    img.src = `/images/tipos_violencia/${item.imagen}`; // nombre de la imagen desde la API
+                    // 🔹 Aquí usamos la URL completa del servidor Node
+                    img.src = 'http://localhost:4000' + item.imagen;
                     img.alt = item.nombre;
 
                     const hr = document.createElement('hr');
@@ -72,7 +67,7 @@
                     grid.appendChild(divItem);
                 });
             })
-            .catch(error => console.error('Error cargando tipos de violencia:', error));
+            .catch(err => console.error('Error cargando tipos de violencia:', err));
     </script>
 
 </body>
