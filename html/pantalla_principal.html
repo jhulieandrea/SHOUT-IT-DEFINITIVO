@@ -12,13 +12,14 @@
 
 <body>
 
- <!-- Aquí se inserta el header -->
- <div id="header-container"></div>
+  <!-- HEADER -->
+  <div id="header-container"></div>
 
-  <!-- Aquí se inserta el encabezado -->
+  <!-- ENCABEZADO -->
   <div id="encabezado"></div>
 
-  <!-- CONTENIDO -->  <section class="mission-section">
+  <!-- CONTENIDO -->
+  <section class="mission-section">
     <h2>Nuestra Misión</h2>
     <p>
       Nuestra misión es proporcionar un espacio accesible y seguro para la sensibilización y educación sobre los diversos tipos de violencia que
@@ -28,7 +29,6 @@
     </p>
   </section>
 
-  <!-- SECCIÓN OBJETIVO -->
   <section class="objective-section">
     <h2>Objetivo</h2>
     <p>
@@ -40,38 +40,31 @@
   <!-- TARJETAS / ICONOS -->
   <div class="cards">
     <a href="tipos_de_violencia.html" class="card">
-      <img src="imagenes/tipos violencia/tipoviolencia.png" alt="Tipos de Violencia">
+      <img src="http://localhost:4000/imagenes/tipos_violencia/tipoviolencia.png" alt="Tipos de Violencia">
       <div class="card-title">TIPOS DE VIOLENCIA</div>
     </a>
   
     <a href="rutas_atencion.html" class="card">
-      <img src="imagenes/entidades_rutas atencion/rutasatencion.png" alt="Rutas de Atención">
+      <img src="http://localhost:4000/imagenes/entidades_rutas_atencion/rutasatencion.png" alt="Rutas de Atención">
       <div class="card-title">RUTAS DE ATENCIÓN</div>
     </a>
-  
-   
   </div>
 
   <!-- PIE DE PÁGINA -->
   <div id="footer-container"></div>
 
-  <!-- SCRIPT DE CARGA DINÁMICA HEADER FOOTER DENTRO DEL DIV -->
- <script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-    })
-    .catch(err => console.error('Error cargando header:', err));
+  <!-- SCRIPT: Carga dinámica header/footer -->
+  <script>
+    fetch('../html/header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-container').innerHTML = data)
+      .catch(err => console.error('Error cargando header:', err));
 
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-container').innerHTML = data;
-    })
-    .catch(err => console.error('Error cargando footer:', err));
-</script>
+    fetch('../html/footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data)
+      .catch(err => console.error('Error cargando footer:', err));
+  </script>
+
 </body>
 </html>
-
-
