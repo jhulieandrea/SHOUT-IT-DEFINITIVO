@@ -1,0 +1,79 @@
+/* CONTENIDO */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;      /* centra el contenido */
+  max-width: 1400px;            /* evita que se estire demasiado */
+  margin: 0 auto;               /* lo centra horizontalmente */
+  padding: 30px 20px;           /* menos padding lateral en pantallas pequeñas */
+  gap: 40px;
+}
+
+.left-column h2 {
+      color: #8c2352;
+      font-family: 'Ultra', serif;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+.right-column {
+  flex: 1 1 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.left-column p {
+      margin: 0 auto 20px;
+      max-width: 280px;
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+/* Tarjetas */
+.contact-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 8px;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #000; /* texto negro por defecto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animación suave */
+}
+
+.contact-card strong {
+  display: block;
+  color: #8c2352; /* solo el título */
+  font-size: 20px;
+  font-family: 'Ultra', serif;
+  margin-bottom: 10px;
+}
+
+/* Hover efecto */
+.contact-card:hover {
+  transform: translateY(-5px);        /* se eleva 5px */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15); /* sombra más marcada */
+}
+
+   
+/* 🔹 RESPONSIVE: cuando la pantalla sea menor a 900px */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;   /* apila columnas */
+    align-items: center;
+  }
+
+  .right-column {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-card {
+    width: 100%;              /* tarjetas ocupan todo el ancho */
+  }
+}

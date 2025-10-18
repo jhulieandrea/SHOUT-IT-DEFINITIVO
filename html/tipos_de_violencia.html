@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shout It - Tipos de Violencia</title>
+  
+    <!-- ESTILOS -->
+     <link rel="stylesheet" href="../css/encabezado.css">
+     <link rel="stylesheet" href="../css/tipos_de_violencia.css">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Aquí se inserta el header -->
+ <div id="header-container"></div>
+
+  <!-- Aquí se inserta el encabezado -->
+  <div id="encabezado"></div>
+
+
+  <!-- TÍTULO -->
+  <div class="main-title">TIPOS DE VIOLENCIA</div>
+
+  <!-- CUADRÍCULA DE VIOLENCIAS -->
+  <div class="grid">
+    <div class="item">
+      <img src="imagenes/tipos violencia/fisica.png" alt="Física">
+      <hr>
+      <div>Física</div>
+    </div>
+    <div class="item">
+      <img src="imagenes/tipos violencia/psicologica.png" alt="Psicológica">
+      <hr>
+      <div>Psicológica</div>
+    </div>
+    <div class="item">
+      <img src="imagenes/tipos violencia/genero.png" alt="Género">
+      <hr>
+      <div>Género</div>
+    </div>
+    <div class="item">
+      <img src="imagenes/tipos violencia/sexual.png" alt="Sexual">
+      <hr>
+      <div>Sexual</div>
+    </div>
+    <div class="item">
+      <img src="imagenes/tipos violencia/economica.png" alt="Económica">
+      <hr>
+      <div>Económica</div>
+    </div>
+    
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+    <div id="footer-container"></div>
+
+  <!-- SCRIPT DE CARGA DINÁMICA HEADER FOOTER DENTRO DEL DIV -->
+    <script>  
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+      fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

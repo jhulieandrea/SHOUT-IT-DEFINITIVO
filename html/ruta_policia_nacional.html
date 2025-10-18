@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shout It - Tipos de Violencia</title>
+  
+    <!-- ESTILOS -->
+     <link rel="stylesheet" href="../css/encabezado.css">
+     <link rel="stylesheet" href="../css/ruta_policia_nacional.css">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+ <!-- Aquí se inserta el header -->
+ <div id="header-container"></div>
+
+  <!-- Aquí se inserta el encabezado -->
+  <div id="encabezado"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container">
+    <div class="left-column">
+      <h2>POLICÍA NACIONAL</h2>
+      <p>La denuncia puede hacerse en las estaciones de Policía o en las Unidades de Policía Judicial como la Dijin, Sijin o el CTI. Estas remiten el caso a la Fiscalía y remiten a la víctima a Medicina Legal.</p>
+      <img src="imagenes/entidades_rutas atencion/policia_nacional.png" alt="Escudo">
+      <div class="nav-arrows">
+      </div>
+    </div>
+
+    <div class="right-column">
+      <!-- Tarjetas de contacto -->
+      <div class="contact-card">
+        <p><strong>Oficina Prevención</strong></p>
+        <p>Dirección: Avenida Caracas N° 6–05 <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.ofpre-pla@policia.gov.co</p>
+        <p>Teléfono: 3057691842</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Comando Operativo Ciudadano 1 - Zona Norte</strong></p>
+        <p>Dirección: Avenida Circunvalar N° 36–00 <img src="location.png"> <img src="book.png"></p>
+        <p>Teléfono: 3146889247</p>
+        <p>Correo: mebog.coper1@policia.gov.co</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Comando Operativo Ciudadano 2 - Zona Sur</strong></p>
+        <p>Avenida 1ra de Mayo N° 1–90 Este <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.cosec2@policia.gov.co</p>
+        <p>Teléfono: 3502150292</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Comando Operativo Ciudadano 3 - Zona Occidental</strong></p>
+        <p>Calle 41D Sur N° 78M–05 <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.coper3@policia.gov.co</p>
+        <p>Teléfono: 3246820201</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Comando Operativo Ciudadano 4 - Zona Oriental</strong></p>
+        <p>Calle 19 N° 00–75 <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.cosec4@policia.gov.co</p>
+        <p>Teléfono: 3232416216</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Oficina de Infancia y Adolescencia</strong></p>
+        <p>Calle 12 N° 30–35 <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.ginad@policia.gov.co</p>
+                <p>Teléfono: 3502150335</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Oficina CESPA</strong></p>
+        <p>Calle 12 N° 30–35 <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.ginad@policia.gov.co</p>
+        <p>Teléfono: 3502150335</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Centro Transitorio de Protección</strong></p>
+        <p>Carrera 32 N° 14–20 <img src="location.png"> <img src="book.png"></p>
+        <p>Correo: mebog.upj@policia.gov.co</p>
+        <p>Teléfono: 3148210328</p>
+      </div>
+    </div>
+  </div>
+
+ <!-- PIE DE PÁGINA -->
+    <div id="footer-container"></div>
+
+  <!-- SCRIPT DE CARGA DINÁMICA HEADER FOOTER DENTRO DEL DIV -->
+    <script>  
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+      fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

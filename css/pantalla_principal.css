@@ -1,0 +1,66 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f3e7;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+h2 {
+  color: #8c2352;
+  font-family: 'Ultra', serif;
+  text-align: center;
+  margin-top: 60px;   
+}
+
+.mission-section, .objective-section {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.mission-section p,
+.objective-section p {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  color: #8c2352;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}

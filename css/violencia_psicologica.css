@@ -1,0 +1,75 @@
+.section-title {
+  margin-top: 40px;
+  font-size: 28px;
+  font-family: 'Ultra', serif;
+  color: #8c2352;
+  text-align: center;
+  margin-top: 60px;   /* antes era menos, ahora más espacio hacia abajo */
+}
+
+.section-text {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 16px;
+  text-align: align;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+
+/* Línea divisoria */
+hr {
+  margin: 30px auto;
+  width: 85%;
+  border: 0;
+  border-top: 1px solid #bbb;
+}
+
+/* Contenedor de imagen */
+.image-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.image-container img {
+  width: 280px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Flechas de navegación */
+.arrow-buttons {
+  margin: 20px 0 40px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.arrow-buttons span {
+  margin: 0 20px;
+  cursor: pointer;
+  color: #d92777;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.arrow-buttons span:hover {
+  transform: scale(1.2);
+  color: #8c2352;
+}
+/* Centrar todo el contenido principal */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* asegura que texto e hijos queden centrados */
+  margin: 0 auto;
+  max-width: 900px; /* opcional para no ocupar toda la pantalla */
+}
+
+/* Ajustar el texto descriptivo */
+.section-text {
+  text-align: center;  /* antes estaba justify */
+  margin: 20px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}

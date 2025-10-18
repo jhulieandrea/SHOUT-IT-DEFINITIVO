@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shout It - Tipos de Violencia</title>
+  
+    <!-- ESTILOS -->
+     <link rel="stylesheet" href="../css/encabezado.css">
+     <link rel="stylesheet" href="../css/rutas_atencion.css">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Aquí se inserta el header -->
+ <div id="header-container"></div>
+
+  <!-- Aquí se inserta el encabezado -->
+  <div id="encabezado"></div>
+
+<!-- TÍTULO -->
+<div class="main-title">RUTAS DE ATENCIÓN</div>
+
+<!-- CUADRÍCULA DE ENTIDADES -->
+<div class="grid">
+
+  <div class="item">
+    <a href="ruta_policia_nacional.html">
+      <img src="imagenes/entidades_rutas atencion/policia_nacional.png" alt="Policía Nacional">
+      <div class="card-text">Policía Nacional</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="medicina_legal.html">
+      <img src="imagenes/entidades_rutas atencion/medicina_legal.png" alt="Medicina Legal">
+      <div class="card-text">Medicina Legal</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="fiscalia_general.html">
+      <img src="imagenes/entidades_rutas atencion/fiscalia_general.png" alt="Fiscalía General de la Nación">
+      <div class="card-text">Fiscalía General<br>de la Nación</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="defensoria.html">
+      <img src="imagenes/entidades_rutas atencion/defensoria.png" alt="Defensoría del Pueblo">
+      <div class="card-text">Defensoría del Pueblo</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="bienestar_familiar.html">
+      <img src="imagenes/entidades_rutas atencion/bienestar_familiar.png" alt="Bienestar Familiar">
+      <div class="card-text">Bienestar Familiar</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="linea_purpura.html">
+      <img src="imagenes/entidades_rutas atencion/linea_purpura.png" alt="Línea Púrpura">
+      <div class="card-text">Línea Púrpura</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="icbf.html">
+      <img src="imagenes/entidades_rutas atencion/icbf.png" alt="ICBF">
+      <div class="card-text">ICBF</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="Secretaria_distrital_mujer.html">
+      <img src="imagenes/entidades_rutas atencion/secretaria_distrital_mujer.png" alt="Secretaría Distrital de la Mujer">
+      <div class="card-text">Secretaría Distrital<br>de la Mujer</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="casas_justicia.html">
+      <img src="imagenes/entidades_rutas atencion/casas_justicia.png" alt="Casas de Justicia">
+      <div class="card-text">Casas de Justicia</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="comisarias_familia.html">
+      <img src="imagenes/entidades_rutas atencion/comisarias_familia.png" alt="Comisarías de Familia">
+      <div class="card-text">Comisarías de Familia</div>
+    </a>
+  </div>
+
+</div>
+
+<!-- PIE DE PÁGINA -->
+    <div id="footer-container"></div>
+
+  <!-- SCRIPT DE CARGA DINÁMICA HEADER FOOTER DENTRO DEL DIV -->
+    <script>  
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+      fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

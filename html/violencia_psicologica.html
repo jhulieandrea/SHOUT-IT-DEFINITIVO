@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shout It - Inicio</title>
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="../css/encabezado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/violencia_psicologica.css">
+</head>
+
+<body>
+
+ <!-- Aquí se inserta el header -->
+ <div id="header-container"></div>
+
+  <!-- Aquí se inserta el encabezado -->
+  <div id="encabezado"></div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+  <div class="section-title">Violencia Psicológica</div>
+
+  <div class="section-text">
+    Es toda acción u omisión destinada a degradar o controlar las acciones, comportamientos, creencias y decisiones de otras personas por medio de intimidación, manipulación, amenaza, humillación, aislamiento, o cualquier conducta que implique un perjuicio en la salud psicológica.  
+    Este tipo de violencia es de las más comunes y naturalizadas de la sociedad, por lo que es necesario aprender a reconocerla y denunciar.
+  </div>
+
+  <hr />
+
+  <div class="image-container">
+    <img src="3.JPG" alt="Violencia Psicológica" />
+  </div>
+
+  <div class="arrow-buttons">
+    <span>⬅️</span>
+    <span>➡️</span>
+  </div>
+
+  <hr />
+</main>
+
+
+<!-- PIE DE PÁGINA -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPT DE CARGA DINÁMICA HEADER FOOTER DENTRO DEL DIV -->
+ <script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    })
+    .catch(err => console.error('Error cargando header:', err));
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    })
+    .catch(err => console.error('Error cargando footer:', err));
+</script>
+
+</body>
+</html>

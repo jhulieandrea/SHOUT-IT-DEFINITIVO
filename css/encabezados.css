@@ -1,0 +1,75 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap');
+
+/* ENCABEZADO */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 180px;
+}
+
+.logo-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Ultra', serif;
+  font-size: 50px;
+  color: #d92777;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* PIE DE PÁGINA */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  background-color: #f9f3e7;
+}
+
+footer span {
+  margin: 5px 10px;
+}
+
+/* RESPONSIVE HEADER & FOOTER */
+@media (max-width: 768px) {
+  .logo-text {
+    position: static;
+    transform: none;
+    font-size: 36px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+}
