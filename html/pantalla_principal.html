@@ -1,69 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Shout It - Inicio</title>
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="../css/encabezado.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/pantalla_principal.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shout It - Inicio</title>
+  <link rel="stylesheet" href="../css/estilos_globales.css">
 </head>
-
 <body>
 
-  <!-- HEADER -->
+  <!-- Header dinámico -->
   <div id="header-container"></div>
 
-  <!-- ENCABEZADO -->
-  <div id="encabezado"></div>
-
-  <!-- CONTENIDO -->
-  <section class="mission-section">
-    <h2>Nuestra Misión</h2>
+  <!-- SECCIÓN MISIÓN -->
+  <section class="section">
+    <h2>NUESTRA MISIÓN</h2>
     <p>
-      Nuestra misión es proporcionar un espacio accesible y seguro para la sensibilización y educación sobre los diversos tipos de violencia que
-      afectan a la sociedad, así como las rutas de atención disponibles en Bogotá. Buscamos empoderar a la comunidad mediante la difusión de
-      información clara y precisa sobre los derechos de las víctimas y los recursos disponibles para su protección y atención integral.
-      A través de un foro social, fomentamos el diálogo y la reflexión entre los ciudadanos, promoviendo la solidaridad y el apoyo mutuo.
+      Nuestra misión es proporcionar un espacio accesible y seguro para la sensibilización y educación sobre los diversos tipos de violencia que afectan a la sociedad, así como las rutas de atención disponibles en Bogotá. Buscamos empoderar a la comunidad mediante la difusión de información clara y precisa sobre los derechos de las víctimas y los recursos disponibles para su protección y atención integral.
     </p>
   </section>
 
-  <section class="objective-section">
-    <h2>Objetivo</h2>
+  <!-- SECCIÓN OBJETIVO -->
+  <section class="section">
+    <h2>OBJETIVO</h2>
     <p>
-      Promover la concienciación y el acceso a recursos sobre los tipos de violencia de género en Bogotá, facilitando información sobre los diferentes
-      tipos de violencia, las rutas de atención disponibles para las víctimas, y ofreciendo un espacio de diálogo y apoyo a través de un foro social.
+      Promover la concienciación y el acceso a recursos sobre los tipos de violencia en Bogotá, facilitando información sobre los diferentes tipos de violencia, las rutas de atención disponibles para las víctimas, y ofreciendo un espacio informativo de apoyo social.
     </p>
   </section>
 
-  <!-- TARJETAS / ICONOS -->
-  <div class="cards">
+  <!-- TARJETAS -->
+  <div class="grid">
     <a href="tipos_de_violencia.html" class="card">
-      <img src="http://localhost:4000/imagenes/tipos_violencia/tipoviolencia.png" alt="Tipos de Violencia">
+      <img src="../public/imagenes/tipos_violencia/tipoviolencia.png" alt="Tipos de Violencia">
       <div class="card-title">TIPOS DE VIOLENCIA</div>
     </a>
-  
+
     <a href="rutas_atencion.html" class="card">
-      <img src="http://localhost:4000/imagenes/entidades_rutas_atencion/rutasatencion.png" alt="Rutas de Atención">
+      <img src="../public/imagenes/entidades_rutas_atencion/rutasatencion.png" alt="Rutas de Atención">
       <div class="card-title">RUTAS DE ATENCIÓN</div>
     </a>
   </div>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- Footer dinámico -->
   <div id="footer-container"></div>
 
-  <!-- SCRIPT: Carga dinámica header/footer -->
+  <!-- Scripts para cargar header/footer -->
   <script>
-    fetch('../html/header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header-container').innerHTML = data)
-      .catch(err => console.error('Error cargando header:', err));
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-container').innerHTML = data);
 
-    fetch('../html/footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data)
-      .catch(err => console.error('Error cargando footer:', err));
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data);
   </script>
 
 </body>

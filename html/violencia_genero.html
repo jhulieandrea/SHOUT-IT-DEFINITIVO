@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violencia de Género</title>
+  <link rel="stylesheet" href="../css/estilos_globales.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="section">
+    <h2>VIOLENCIA DE GÉNERO</h2>
+    <p>
+      La violencia de género incluye toda acción o conducta, basada en el género, que cause daño físico, sexual, psicológico o económico a una persona. 
+      Se fundamenta en relaciones desiguales de poder y busca controlar, someter o discriminar a las mujeres por el hecho de serlo.
+      Este tipo de violencia puede presentarse en el hogar, el trabajo, espacios públicos o en relaciones afectivas.
+    </p>
+  </div>
+
+  <!-- TARJETAS DE RUTAS DE ATENCIÓN -->
+  <div class="grid">
+    <a href="linea_purpura.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/linea_purpura.png" alt="Línea Púrpura">
+      <div class="card-title">LÍNEA PÚRPURA</div>
+    </a>
+
+    <a href="secretaria_distrital_mujer.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/secretaria_distrital_mujer.png" alt="Secretaría Distrital de la Mujer">
+      <div class="card-title">SECRETARÍA DISTRITAL DE LA MUJER</div>
+    </a>
+
+    <a href="comisarias_familia.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/comisarias_familia.png" alt="Comisarías de Familia">
+      <div class="card-title">COMISARÍAS DE FAMILIA</div>
+    </a>
+
+    <a href="defensoria.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/defensoria.png" alt="Defensoría del Pueblo">
+      <div class="card-title">DEFENSORÍA DEL PUEBLO</div>
+    </a>
+
+    <a href="icbf.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/icbf.png" alt="ICBF">
+      <div class="card-title">INSTITUTO COLOMBIANO DE BIENESTAR FAMILIAR</div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPT HEADER Y FOOTER -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-container').innerHTML = data);
+      
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data);
+  </script>
+
+</body>
+</html>

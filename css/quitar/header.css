@@ -1,0 +1,115 @@
+/* Importación de fuentes Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap');
+
+/* ESTILOS GENERALES */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f3e7;
+  color: #000;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  padding: 15px 50px;
+  position: relative;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 20px auto 40px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  height: 160px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Ultra', serif;
+  font-size: 50px;
+  color: #d92777;
+  white-space: nowrap;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+  color: #8c2352;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #d92777;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  padding: 20px 50px;
+  max-width: 1400px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+footer span {
+  margin: 5px 10px;
+  color: #8c2352;
+}
+
+/* RESPONSIVE HEADER & FOOTER */
+@media (max-width: 768px) {
+  .logo-text {
+    position: static;
+    transform: none;
+    font-size: 36px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  nav {
+    margin-top: 10px;
+  }
+  footer {
+    padding: 20px;
+  }
+}

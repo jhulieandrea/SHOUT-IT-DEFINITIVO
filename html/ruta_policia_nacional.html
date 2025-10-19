@@ -1,110 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Shout It - Tipos de Violencia</title>
-  
-    <!-- ESTILOS -->
-     <link rel="stylesheet" href="../css/encabezado.css">
-     <link rel="stylesheet" href="../css/ruta_policia_nacional.css">
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shout It - Policía Nacional</title>
+  <link rel="stylesheet" href="../css/estilos_globales.css" />
+  <style>
+    /* Igual que la plantilla Fiscalía */
+    .ruta-container {display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:50px;max-width:1300px;margin:50px auto;background:#fff;padding:40px 60px;border-radius:30px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    .ruta-left{flex:1 1 320px;text-align:center;border-right:3px solid #f3d0db;padding-right:30px;}
+    .ruta-left h2{font-family:'Ultra',serif;color:#8c2352;font-size:32px;margin-bottom:20px;}
+    .ruta-left p{font-size:18px;color:#333;margin-bottom:25px;text-align:justify;}
+    .ruta-left img{max-width:220px;margin-top:10px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.15);}
+    .ruta-right{flex:2 1 600px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+    .contact-card{background:#fff8f9;border-radius:18px;padding:20px 22px;box-shadow:0 4px 10px rgba(0,0,0,0.08);border-left:6px solid #b30059;transition:all 0.3s ease;}
+    .contact-card:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,0.15);}
+    .contact-card strong{color:#8c2352;font-size:18px;}
+    .contact-card p{margin:6px 0;font-size:16px;color:#333;}
+    .contact-card img{width:18px;vertical-align:middle;margin-left:4px;}
+    @media(max-width:768px){.ruta-container{flex-direction:column;padding:25px}.ruta-left{border-right:none;padding-right:0;border-bottom:3px solid #f3d0db;padding-bottom:20px}}
+  </style>
 </head>
-
 <body>
+  <div id="header-container"></div>
 
- <!-- Aquí se inserta el header -->
- <div id="header-container"></div>
-
-  <!-- Aquí se inserta el encabezado -->
-  <div id="encabezado"></div>
-
-  <!-- CONTENIDO PRINCIPAL -->
-  <div class="container">
-    <div class="left-column">
+  <main class="ruta-container">
+    <div class="ruta-left">
       <h2>POLICÍA NACIONAL</h2>
-      <p>La denuncia puede hacerse en las estaciones de Policía o en las Unidades de Policía Judicial como la Dijin, Sijin o el CTI. Estas remiten el caso a la Fiscalía y remiten a la víctima a Medicina Legal.</p>
-      <img src="imagenes/entidades_rutas atencion/policia_nacional.png" alt="Escudo">
-      <div class="nav-arrows">
-      </div>
+      <p>La denuncia puede hacerse en las estaciones de Policía o en las Unidades de Policía Judicial como la Dijín, Sijín o el CTI. Estas remiten el caso a la Fiscalía y a Medicina Legal.</p>
+      <img src="../public/imagenes/entidades_rutas_atencion/policia_nacional.png" alt="Policía Nacional">
     </div>
 
-    <div class="right-column">
-      <!-- Tarjetas de contacto -->
+    <div class="ruta-right">
       <div class="contact-card">
         <p><strong>Oficina Prevención</strong></p>
-        <p>Dirección: Avenida Caracas N° 6–05 <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.ofpre-pla@policia.gov.co</p>
-        <p>Teléfono: 3057691842</p>
+        <p><img src="../public/imagenes/icons/location.png"> Avenida Caracas N° 6–05</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.ofpre-pla@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3057691842</p>
       </div>
-
       <div class="contact-card">
         <p><strong>Comando Operativo Ciudadano 1 - Zona Norte</strong></p>
-        <p>Dirección: Avenida Circunvalar N° 36–00 <img src="location.png"> <img src="book.png"></p>
-        <p>Teléfono: 3146889247</p>
-        <p>Correo: mebog.coper1@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/location.png"> Avenida Circunvalar N° 36–00</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.coper1@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3146889247</p>
       </div>
-
       <div class="contact-card">
         <p><strong>Comando Operativo Ciudadano 2 - Zona Sur</strong></p>
-        <p>Avenida 1ra de Mayo N° 1–90 Este <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.cosec2@policia.gov.co</p>
-        <p>Teléfono: 3502150292</p>
+        <p><img src="../public/imagenes/icons/location.png"> Avenida 1ra de Mayo N° 1–90 Este</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.cosec2@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3502150292</p>
       </div>
-
       <div class="contact-card">
         <p><strong>Comando Operativo Ciudadano 3 - Zona Occidental</strong></p>
-        <p>Calle 41D Sur N° 78M–05 <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.coper3@policia.gov.co</p>
-        <p>Teléfono: 3246820201</p>
+        <p><img src="../public/imagenes/icons/location.png"> Calle 41D Sur N° 78M–05</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.coper3@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3246820201</p>
       </div>
-
       <div class="contact-card">
         <p><strong>Comando Operativo Ciudadano 4 - Zona Oriental</strong></p>
-        <p>Calle 19 N° 00–75 <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.cosec4@policia.gov.co</p>
-        <p>Teléfono: 3232416216</p>
+        <p><img src="../public/imagenes/icons/location.png"> Calle 19 N° 00–75</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.cosec4@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3232416216</p>
       </div>
-
       <div class="contact-card">
         <p><strong>Oficina de Infancia y Adolescencia</strong></p>
-        <p>Calle 12 N° 30–35 <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.ginad@policia.gov.co</p>
-                <p>Teléfono: 3502150335</p>
+        <p><img src="../public/imagenes/icons/location.png"> Calle 12 N° 30–35</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.ginad@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3502150335</p>
       </div>
-
-      <div class="contact-card">
-        <p><strong>Oficina CESPA</strong></p>
-        <p>Calle 12 N° 30–35 <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.ginad@policia.gov.co</p>
-        <p>Teléfono: 3502150335</p>
-      </div>
-
       <div class="contact-card">
         <p><strong>Centro Transitorio de Protección</strong></p>
-        <p>Carrera 32 N° 14–20 <img src="location.png"> <img src="book.png"></p>
-        <p>Correo: mebog.upj@policia.gov.co</p>
-        <p>Teléfono: 3148210328</p>
+        <p><img src="../public/imagenes/icons/location.png"> Carrera 32 N° 14–20</p>
+        <p><img src="../public/imagenes/icons/email.png"> mebog.upj@policia.gov.co</p>
+        <p><img src="../public/imagenes/icons/phone.png"> 3148210328</p>
       </div>
     </div>
-  </div>
+  </main>
 
- <!-- PIE DE PÁGINA -->
-    <div id="footer-container"></div>
+  <div id="footer-container"></div>
 
-  <!-- SCRIPT DE CARGA DINÁMICA HEADER FOOTER DENTRO DEL DIV -->
-    <script>  
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-      fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
+  <script>
+    fetch('header.html').then(r=>r.text()).then(d=>document.getElementById('header-container').innerHTML=d);
+    fetch('footer.html').then(r=>r.text()).then(d=>document.getElementById('footer-container').innerHTML=d);
   </script>
-
 </body>
 </html>

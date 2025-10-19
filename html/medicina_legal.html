@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shout It - Medicina Legal</title>
+  <link rel="stylesheet" href="../css/estilos_globales.css" />
+  <style>
+    .ruta-container {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:flex-start;
+      gap:50px;
+      max-width:1300px;
+      margin:50px auto;
+      background:#fff;
+      padding:40px 60px;
+      border-radius:30px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    }
+    .ruta-left {
+      flex:1 1 320px;
+      text-align:center;
+      border-right:3px solid #f3d0db;
+      padding-right:30px;
+    }
+    .ruta-left h2 {
+      font-family:'Ultra',serif;
+      color:#8c2352;
+      font-size:32px;
+      margin-bottom:20px;
+    }
+    .ruta-left p {
+      font-size:18px;
+      color:#333;
+      margin-bottom:25px;
+      text-align:justify;
+    }
+    .ruta-left img {
+      max-width:220px;
+      margin-top:10px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    }
+    .ruta-right {
+      flex:2 1 600px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+    .contact-card {
+      background:#fff8f9;
+      border-radius:18px;
+      padding:20px 22px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      border-left:6px solid #b30059;
+      transition:all 0.3s ease;
+    }
+    .contact-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+    .contact-card strong {
+      color:#8c2352;
+      font-size:18px;
+    }
+    .contact-card p {
+      margin:6px 0;
+      font-size:16px;
+      color:#333;
+    }
+    .contact-card img {
+      width:18px;
+      vertical-align:middle;
+      margin-left:4px;
+    }
+    @media(max-width:768px){
+      .ruta-container{flex-direction:column;padding:25px}
+      .ruta-left{border-right:none;padding-right:0;border-bottom:3px solid #f3d0db;padding-bottom:20px}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- CONTENIDO -->
+  <main class="ruta-container">
+    <div class="ruta-left">
+      <h2>INSTITUTO NACIONAL DE MEDICINA LEGAL Y CIENCIAS FORENSES</h2>
+      <p>El Instituto Nacional de Medicina Legal y Ciencias Forenses presta servicios técnicos y científicos a las autoridades judiciales y a las víctimas, realizando exámenes médicos legales y emitiendo certificados de valoración en casos de violencia.</p>
+      <img src="../public/imagenes/entidades_rutas_atencion/medicina_legal.png" alt="Medicina Legal">
+    </div>
+
+    <div class="ruta-right">
+      <div class="contact-card">
+        <p><strong>Sede Central Bogotá</strong></p>
+        <p><img src="../public/imagenes/icons/location.png"> Calle 7A No. 12A-51, Bogotá D.C.</p>
+        <p><img src="../public/imagenes/icons/phone.png"> (601) 406 9977</p>
+        <p><img src="../public/imagenes/icons/email.png"> solicitudinformacion@medicinalegal.gov.co</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Centro de Atención a Víctimas</strong></p>
+        <p><img src="../public/imagenes/icons/location.png"> Calle 12 No. 10-34, Bogotá</p>
+        <p><img src="../public/imagenes/icons/phone.png"> (601) 406 9977 Ext. 1301</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Línea Anticorrupción</strong></p>
+        <p><img src="../public/imagenes/icons/phone.png"> 01 8000 5190965</p>
+        <p>Disponible para denuncias relacionadas con servicios institucionales</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Sede Regional Cundinamarca</strong></p>
+        <p><img src="../public/imagenes/icons/location.png"> Carrera 13 No. 19-85, Bogotá</p>
+        <p><img src="../public/imagenes/icons/phone.png"> (601) 406 9977 Ext. 1205</p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Sitio Web Oficial</strong></p>
+        <p><img src="../public/imagenes/icons/world.png"> <a href="https://www.medicinalegal.gov.co" target="_blank">www.medicinalegal.gov.co</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPT -->
+  <script>
+    fetch('header.html')
+      .then(r=>r.text())
+      .then(d=>document.getElementById('header-container').innerHTML=d);
+    fetch('footer.html')
+      .then(r=>r.text())
+      .then(d=>document.getElementById('footer-container').innerHTML=d);
+  </script>
+</body>
+</html>

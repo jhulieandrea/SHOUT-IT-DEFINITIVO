@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violencia Sexual</title>
+  <link rel="stylesheet" href="../css/estilos_globales.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="section">
+    <h2>VIOLENCIA SEXUAL</h2>
+    <p>
+      La violencia sexual comprende cualquier acto o conducta que atente contra la libertad e integridad sexual de una persona mediante el uso de la fuerza, la coacción, la intimidación o el engaño. 
+      Incluye el acoso, abuso, violación y explotación sexual, así como toda forma de contacto o insinuación no consentida. 
+      Es una grave vulneración de los derechos humanos que requiere atención inmediata, apoyo psicológico, médico y jurídico.
+    </p>
+  </div>
+
+  <!-- TARJETAS DE RUTAS DE ATENCIÓN -->
+  <div class="grid">
+    <a href="fiscalia_general.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/fiscalia_general.png" alt="Fiscalía General de la Nación">
+      <div class="card-title">FISCALÍA GENERAL DE LA NACIÓN</div>
+    </a>
+
+    <a href="medicina_legal.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/medicina_legal.png" alt="Instituto Nacional de Medicina Legal">
+      <div class="card-title">MEDICINA LEGAL</div>
+    </a>
+
+    <a href="ruta_policia_nacional.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/policia_nacional.png" alt="Policía Nacional">
+      <div class="card-title">POLICÍA NACIONAL</div>
+    </a>
+
+    <a href="defensoria.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/defensoria.png" alt="Defensoría del Pueblo">
+      <div class="card-title">DEFENSORÍA DEL PUEBLO</div>
+    </a>
+
+    <a href="linea_purpura.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/linea_purpura.png" alt="Línea Púrpura Distrital">
+      <div class="card-title">LÍNEA PÚRPURA DISTRITAL</div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPT HEADER Y FOOTER -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-container').innerHTML = data);
+      
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data);
+  </script>
+
+</body>
+</html>

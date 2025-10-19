@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violencia Económica</title>
+  <link rel="stylesheet" href="../css/estilos_globales.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="section">
+    <h2>VIOLENCIA ECONÓMICA</h2>
+    <p>
+      La violencia económica se refiere a toda acción u omisión que busca controlar, limitar o impedir el acceso de una persona a recursos económicos, bienes o servicios, 
+      afectando su autonomía y bienestar. 
+      Incluye la retención del dinero, la prohibición de trabajar o estudiar, la apropiación de bienes personales, el endeudamiento forzado y la negación de alimentos o recursos básicos.
+    </p>
+  </div>
+
+  <!-- TARJETAS DE RUTAS DE ATENCIÓN -->
+  <div class="grid">
+    <a href="comisarias_familia.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/comisarias_familia.png" alt="Comisarías de Familia">
+      <div class="card-title">COMISARÍAS DE FAMILIA</div>
+    </a>
+
+    <a href="defensoria.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/defensoria.png" alt="Defensoría del Pueblo">
+      <div class="card-title">DEFENSORÍA DEL PUEBLO</div>
+    </a>
+
+    <a href="icbf.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/icbf.png" alt="Instituto Colombiano de Bienestar Familiar">
+      <div class="card-title">ICBF</div>
+    </a>
+
+    <a href="linea_purpura.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/linea_purpura.png" alt="Línea Púrpura Distrital">
+      <div class="card-title">LÍNEA PÚRPURA DISTRITAL</div>
+    </a>
+
+    <a href="secretaria_distrital_mujer.html" class="card">
+      <img src="../public/imagenes/entidades_rutas_atencion/secretaria_distrital_mujer.png" alt="Secretaría Distrital de la Mujer">
+      <div class="card-title">SECRETARÍA DISTRITAL DE LA MUJER</div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPT HEADER Y FOOTER -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-container').innerHTML = data);
+      
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data);
+  </script>
+
+</body>
+</html>
