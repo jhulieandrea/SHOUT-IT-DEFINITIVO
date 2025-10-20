@@ -222,3 +222,85 @@ footer {
     height: 160px;
   }
 }
+/* === MENÚ DESPLEGABLE SHOUT IT === */
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul.menu li {
+  position: relative;
+}
+
+nav ul.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+nav ul.menu a:hover {
+  background-color: #d92777;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Submenú */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: linear-gradient(180deg, #ffffff, #fff3f7);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  top: 45px;
+  left: 0;
+  min-width: 230px;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-content li {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #8c2352;
+  padding: 12px 18px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffe6ef;
+  color: #b30059;
+}
+
+/* Mostrar menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* === RESPONSIVE (para celulares) === */
+@media (max-width: 768px) {
+  nav ul.menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+  .dropdown-content a {
+    padding: 10px 0;
+  }
+}

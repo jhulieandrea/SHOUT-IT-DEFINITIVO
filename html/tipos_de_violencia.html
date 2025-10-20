@@ -14,52 +14,59 @@
   <!-- TÍTULO -->
   <div class="main-title">TIPOS DE VIOLENCIA</div>
 
-  <!-- CUADRÍCULA DE TIPOS -->
+  <!-- CUADRÍCULA -->
   <div class="grid" id="grid-tipos-violencia"></div>
 
   <!-- FOOTER -->
   <div id="footer-container"></div>
 
   <script>
-    // Cargar header y footer
+    // ========== CARGAR HEADER Y FOOTER ==========
     fetch('header.html')
       .then(r => r.text())
-      .then(data => document.getElementById('header-container').innerHTML = data);
+      .then(html => document.getElementById('header-container').innerHTML = html);
 
     fetch('footer.html')
       .then(r => r.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data);
+      .then(html => document.getElementById('footer-container').innerHTML = html);
 
-    // Cargar tipos de violencia desde la API
-    fetch('http://localhost:4000/api/tipos-violencia')
-      .then(r => r.json())
-      .then(data => {
-        const grid = document.getElementById('grid-tipos-violencia');
-        grid.innerHTML = '';
+     
+    // ========== DETECTAR SERVIDOR CORRECTO ==========
+const apiBase = window.location.hostname.includes('127.0.0.1')
+  ? 'http://localhost:4000'
+  : 'http://127.0.0.1:4000';
 
-        data.forEach(item => {
-          const card = document.createElement('a');
-          card.classList.add('card');
-          card.href = item.enlace; // Ejemplo: violencia_psicologica.html
+// ========== CARGAR TIPOS DE VIOLENCIA ==========
+fetch(`${apiBase}/api/tipos-violencia`)
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById('grid-tipos-violencia');
+    grid.innerHTML = '';
 
-          const img = document.createElement('img');
-          img.src = 'http://localhost:4000' + item.imagen;
-          img.alt = item.nombre;
+    data.forEach(item => {
+      const card = document.createElement('a');
+      card.classList.add('card');
+      card.href = `${window.location.origin}/html/${item.enlace}`;
 
-          const title = document.createElement('div');
-          title.classList.add('card-title');
-          title.textContent = item.nombre.toUpperCase();
+      const img = document.createElement('img');
+      img.src = `${apiBase}${item.imagen}`;
+      img.alt = item.nombre;
 
-          card.appendChild(img);
-          card.appendChild(title);
-          grid.appendChild(card);
-        });
-      })
-      .catch(err => {
-        console.error('Error cargando tipos de violencia:', err);
-        document.getElementById('grid-tipos-violencia').innerHTML =
-          '<p>Error al cargar los tipos de violencia. Intenta nuevamente.</p>';
-      });
+      const title = document.createElement('div');
+      title.classList.add('card-title');
+      title.textContent = item.nombre.toUpperCase();
+
+      card.appendChild(img);
+      card.appendChild(title);
+      grid.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.error('❌ Error al cargar los tipos de violencia:', error);
+    document.getElementById('grid-tipos-violencia').innerHTML =
+      '<p>Error al cargar los tipos de violencia. Verifica el servidor.</p>';
+  });
+
   </script>
 
 </body>

@@ -1,24 +1,40 @@
+// ===============================
+//  SERVIDOR SHOUT IT (versión corregida CORS + rutas absolutas)
+// ===============================
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 const port = 4000;
 
-app.use(cors());
-app.use(express.json());
+// ===============================
+//  CONFIGURACIÓN CORS
+// ===============================
+// 🔹 Acepta cualquier origen (solo para desarrollo)
+app.use(cors({
+  origin: '*',
+  methods: ['GET'],
+  allowedHeaders: ['Content-Type']
+}));
 
-// Servir carpeta 'public' completa para que las imágenes funcionen
-app.use('/imagenes', express.static('../public/imagenes'));
+// ===============================
+//  CONFIGURACIÓN DE EXPRESS
+// ===============================
+// Servir imágenes desde la carpeta /public
+app.use('/imagenes', express.static(path.join(__dirname, '../public/imagenes')));
 
-// Tipos de violencia
+// ===============================
+//  DATOS DE LA API
+// ===============================
+
 const tiposViolencia = [
-  { id: 1, nombre: "Física", imagen: "/imagenes/tipos_violencia/fisica.png" },
-  { id: 2, nombre: "Psicológica", imagen: "/imagenes/tipos_violencia/psicologica.png" },
-  { id: 3, nombre: "Género", imagen: "/imagenes/tipos_violencia/genero.png" },
-  { id: 4, nombre: "Sexual", imagen: "/imagenes/tipos_violencia/sexual.png" },
-  { id: 5, nombre: "Económica", imagen: "/imagenes/tipos_violencia/economica.png" }
+  { id: 1, nombre: "Física", imagen: "/imagenes/tipos_violencia/fisica.png", enlace: "violencia_fisica.html" },
+  { id: 2, nombre: "Psicológica", imagen: "/imagenes/tipos_violencia/psicologica.png", enlace: "violencia_psicologica.html" },
+  { id: 3, nombre: "Género", imagen: "/imagenes/tipos_violencia/genero.png", enlace: "violencia_genero.html" },
+  { id: 4, nombre: "Sexual", imagen: "/imagenes/tipos_violencia/sexual.png", enlace: "violencia_sexual.html" },
+  { id: 5, nombre: "Económica", imagen: "/imagenes/tipos_violencia/economica.png", enlace: "violencia_economica.html" }
 ];
 
-// Rutas de atención
 const rutasAtencion = [
   { id: 1, nombre: "Policía Nacional", imagen: "/imagenes/entidades_rutas_atencion/policia_nacional.png" },
   { id: 2, nombre: "Medicina Legal", imagen: "/imagenes/entidades_rutas_atencion/medicina_legal.png" },
@@ -32,7 +48,9 @@ const rutasAtencion = [
   { id: 10, nombre: "Comisarías de Familia", imagen: "/imagenes/entidades_rutas_atencion/comisarias_familia.png" }
 ];
 
-// Endpoints
+// ===============================
+//  ENDPOINTS DE LA API
+// ===============================
 app.get('/api/tipos-violencia', (req, res) => {
   res.json(tiposViolencia);
 });
@@ -41,6 +59,12 @@ app.get('/api/rutas-atencion', (req, res) => {
   res.json(rutasAtencion);
 });
 
+// ===============================
+//  INICIAR SERVIDOR
+// ===============================
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`✅ Servidor corriendo correctamente en: http://localhost:${port}`);
+  console.log('📡 Endpoints disponibles:');
+  console.log('➡ /api/tipos-violencia');
+  console.log('➡ /api/rutas-atencion');
 });
