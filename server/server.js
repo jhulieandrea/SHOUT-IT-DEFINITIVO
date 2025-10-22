@@ -1,31 +1,16 @@
-// ===============================
-//  SERVIDOR SHOUT IT (versión corregida CORS + rutas absolutas)
-// ===============================
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const app = express();
 const port = 4000;
 
-// ===============================
-//  CONFIGURACIÓN CORS
-// ===============================
-// 🔹 Acepta cualquier origen (solo para desarrollo)
 app.use(cors({
   origin: '*',
   methods: ['GET'],
   allowedHeaders: ['Content-Type']
 }));
 
-// ===============================
-//  CONFIGURACIÓN DE EXPRESS
-// ===============================
-// Servir imágenes desde la carpeta /public
 app.use('/imagenes', express.static(path.join(__dirname, '../public/imagenes')));
-
-// ===============================
-//  DATOS DE LA API
-// ===============================
 
 const tiposViolencia = [
   { id: 1, nombre: "Física", imagen: "/imagenes/tipos_violencia/fisica.png", enlace: "violencia_fisica.html" },
@@ -48,23 +33,17 @@ const rutasAtencion = [
   { id: 10, nombre: "Comisarías de Familia", imagen: "/imagenes/entidades_rutas_atencion/comisarias_familia.png" }
 ];
 
-// ===============================
-//  ENDPOINTS DE LA API
-// ===============================
-app.get('/api/tipos-violencia', (req, res) => {
-  res.json(tiposViolencia);
-});
+app.get('/api/tipos-violencia', (req, res) => res.json(tiposViolencia));
+app.get('/api/rutas-atencion', (req, res) => res.json(rutasAtencion));
 
-app.get('/api/rutas-atencion', (req, res) => {
-  res.json(rutasAtencion);
-});
+// 👉 Exporta app sin iniciar el servidor directamente
+if (require.main === module) {
+  const server = app.listen(port, () => {
+    console.log(`✅ Servidor corriendo correctamente en: http://localhost:${port}`);
+    console.log('📡 Endpoints disponibles:');
+    console.log('➡ /api/tipos-violencia');
+    console.log('➡ /api/rutas-atencion');
+  });
+}
 
-// ===============================
-//  INICIAR SERVIDOR
-// ===============================
-app.listen(port, () => {
-  console.log(`✅ Servidor corriendo correctamente en: http://localhost:${port}`);
-  console.log('📡 Endpoints disponibles:');
-  console.log('➡ /api/tipos-violencia');
-  console.log('➡ /api/rutas-atencion');
-});
+module.exports = app;

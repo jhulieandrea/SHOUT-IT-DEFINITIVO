@@ -1,0 +1,208 @@
+<!-- Diagrama de casos de uso --> 
+
+@startuml
+class TipoViolencia {
+  +id: number
+  +nombre: string
+  +imagen: string
+  +enlace: string
+}
+
+class RutaAtencion {
+  +id: number
+  +nombre: string
+  +imagen: string
+  +enlace: string
+}
+
+TipoViolencia "1" -- "1" RutaAtencion : relacionado con
+@enduml
+
+
+<!-- DIAGRAMA CASOS DE USO -->
+
+@startuml
+left to right direction
+actor Ciudadano as user
+
+rectangle "SHOUT IT (Web + API)" {
+  usecase "Navegar página principal" as UC1
+  usecase "Consultar tipos de violencia" as UC2
+  usecase "Consultar rutas de atención" as UC3
+  usecase "Ver información de contacto" as UC4
+}
+
+user --> UC1
+user --> UC2
+user --> UC3
+UC3 --> UC4 : <<include>>
+@enduml
+
+<!-- DIAGRAMA DE CLASES -->
+@startuml
+class TipoViolencia {
+  +id: number
+  +nombre: string
+  +imagen: string
+  +enlace: string
+}
+
+class RutaAtencion {
+  +id: number
+  +nombre: string
+  +imagen: string
+  +direccion: string [0..1]
+  +email: string [0..1]
+  +telefono: string [0..1]
+}
+
+class Pagina {
+  +titulo: string
+  +render(): void
+}
+
+class PaginaTiposViolencia extends Pagina
+class PaginaRutasAtencion extends Pagina
+
+PaginaTiposViolencia "1" o-- "*" TipoViolencia
+PaginaRutasAtencion "1" o-- "*" RutaAtencion
+@enduml
+
+
+<!-- DIAGRAMA DE PAQUETES-->
+@startuml
+package "Presentación" {
+  package "HTML" {
+    class PantallaPrincipal
+    class TiposDeViolencia
+    class RutasAtencion
+    class ViolenciaPages
+    class RutasPages
+    class Header
+    class Footer
+  }
+
+  package "CSS" {
+    class EstilosGlobales
+    class RutasAtencionGlobal
+  }
+
+  package "Public" {
+    class Imagenes
+  }
+}
+
+package "Servicios (API)" {
+  class ServerJS
+}
+
+"Presentación" ..> "Servicios (API)" : fetch /api/*
+@enduml
+
+
+<!-- DIAGRAMA DE COMPONENTES-->
+@startuml
+component "Navegador" as Browser
+component "Frontend\n(HTML/CSS/JS)" as Front
+component "API Express\n(server.js)" as API
+database "Datos en memoria" as Data
+node "Host local\nlocalhost:4000" as Host
+
+Browser -- Front : Render estático + Fetch
+Front -- API : HTTP GET /api/tipos-violencia\nHTTP GET /api/rutas-atencion
+API --> Data : Lee arrays en memoria
+API ..> Host : Puerto 4000
+@enduml
+
+
+<!-- DIAGRAMA DE SECUENCIA (CONSULTA RUTA DE ATENCION)-->
+
+@startuml
+actor Usuario
+participant "Navegador" as B
+participant "Frontend (HTML/JS)" as F
+participant "API Express" as A
+
+Usuario -> B: Abre rutas_atencion.html
+B -> F: Carga HTML/CSS/JS
+F -> A: GET /api/rutas-atencion
+A --> F: 200 OK [JSON rutas]
+F -> B: Renderiza tarjetas de contacto
+@enduml
+
+
+<!-- DIAGRAMA DE ACTIVIDAD FLUJO(RENDER DE UNA RUTA)-->
+@startuml
+start
+:Usuario navega a una página de ruta;
+:Se carga header y footer vía fetch;
+:Se solicita JSON a /api/rutas-atencion;
+if (Respuesta OK?) then (Sí)
+  :Parsear JSON;
+  :Pintar tarjetas en el grid;
+else (No)
+  :Mostrar mensaje de error;
+endif
+stop
+@enduml
+
+
+
+<!-- MODELO ENTIDAD RELACION A FUTURO-->
+@startuml
+entity "TipoViolencia" {
+  *id : INT
+  *nombre : VARCHAR
+  *imagen : VARCHAR
+  *enlace : VARCHAR
+}
+
+entity "RutaAtencion" {
+  *id : INT
+  *nombre : VARCHAR
+  *imagen : VARCHAR
+  *contacto : VARCHAR
+  *direccion : VARCHAR
+}
+
+TipoViolencia ||--o{ RutaAtencion : contiene
+@enduml
+
+
+
+
+
+<!-- DIAGRAMA DE DOMINIO -->
+@startuml
+' ====== Entidades principales del dominio ======
+class Usuario {
+  +nombre
+  +correo
+  +ubicacion
+}
+
+class TipoViolencia {
+  +nombre
+  +descripcion
+  +imagen
+}
+
+class RutaAtencion {
+  +nombre
+  +entidad
+  +direccion
+  +telefono
+  +correo
+}
+
+class Entidad {
+  +nombre
+  +tipo
+  +descripcion
+}
+
+' ====== Relaciones entre entidades ======
+Usuario --> TipoViolencia : consulta
+TipoViolencia --> RutaAtencion : relacionada con
+RutaAtencion --> Entidad : gestionada por
+@enduml
